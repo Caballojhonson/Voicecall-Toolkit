@@ -1,0 +1,76 @@
+html, body {
+    margin-left: 50px;
+    margin-right: 50px;
+}
+#title{
+    text-align: center;
+    font-family: "Anton", sans-serif;
+    letter-spacing: 3px;
+    font-size: 3em;
+}
+button {
+    cursor: pointer;
+}
+#btnContainer {
+    display: grid;
+    grid-template-columns: auto 30%;
+    
+}
+#randBtnContainer {
+    display: grid;
+}
+#randBtn {
+    max-width: 100px;
+    max-height: 100px;
+}
+#btnSidebar {
+    display: grid;
+    grid-template-columns: auto auto;
+    column-gap: 25px;
+    margin-left: 15%;
+    margin-right: 15%;
+}  
+#sideTitle {
+    padding: 20px;
+    margin-bottom: 10px;
+    grid-column-start: 1;
+    grid-column-end: 3;
+    text-align: center;
+    font-family: "Anton";
+    font-size: 2em;
+}
+.col1, .col2 {
+    display: grid;
+    grid-template-rows: auto auto auto;
+    row-gap: 25px;
+    justify-content: center;
+}
+.btn {
+    height: 10em;
+    width: 10em;
+    border-width: 0px;
+    border-radius: 50%;
+    background-color: rgb(255, 238, 140);
+}
+.subBtn {
+    height: 5em;
+    width: 5em;
+    border-width: 0px;
+    border-radius: 50%;
+    background-color: rgb(255, 206, 72);
+    text-align: center; 
+    line-height: 5em;
+    font-family: 'Lato', sans-serif;
+    font-weight: bolder;
+    letter-spacing: 1px;
+}
+.icon {
+    max-block-size: 50px;
+}
+.btn:hover, .subBtn:hover {
+    transform: scale(1.1, 1.1);
+    transition: transform 0.2s;
+}
+.btn:focus, .subBtn:focus {
+    outline: none;
+}
