@@ -13,23 +13,23 @@ button {
 }
 #btnContainer {
     display: grid;
-    grid-template-columns: auto 30%;
-    
+    grid-template-columns: 35% 30% 35%;
 }
-#randBtnContainer {
-    display: grid;
-}
-#randBtn {
-    max-width: 100px;
-    max-height: 100px;
-}
-#btnSidebar {
+#btnMainbar {
     display: grid;
     grid-template-columns: auto auto;
     column-gap: 25px;
     margin-left: 15%;
     margin-right: 15%;
 }  
+#subBtnLeft, #subBtnRight {
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    grid-template-rows: 33% 33% 33%;
+    align-items: center;
+    justify-items: center;
+    margin-top: 89px;
+}
 #sideTitle {
     padding: 20px;
     margin-bottom: 10px;

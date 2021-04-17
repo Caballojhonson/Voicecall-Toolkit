@@ -8,7 +8,7 @@ function fartCounter() {
 
 function addFarts() {
     
-    const parent = document.getElementById('randBtnContainer');
+    const parent = document.getElementById('subBtnLeft');
     const wetButton = document.createElement('button');
     const perfectButton = document.createElement('button');
     const longButton = document.createElement('button');
@@ -19,13 +19,13 @@ function addFarts() {
     wetButton.classList.add('subBtn');
     wetButton.id = 'wet';
     wetButton.onclick = wetListner;
-    wetButton.textContent = 'WET';
+    wetButton.textContent = 'Wet';
     parent.appendChild(wetButton);
 
     perfectButton.classList.add('subBtn');
     perfectButton.id = 'perfect';
     perfectButton.onclick = perfectListner;
-    perfectButton.textContent = 'Perfect';
+    perfectButton.textContent = 'Classic';
     parent.appendChild(perfectButton);
 
     longButton.classList.add('subBtn');
@@ -57,9 +57,6 @@ function removeFarts() {
         short.remove();
     }
 }
-
-
-
 
 function wetListner() {
     const wetFart = document.getElementById('wet');
