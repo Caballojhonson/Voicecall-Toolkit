@@ -16,30 +16,30 @@ function addFarts() {
     
     if(fartClicks === 0 || fartClicks % 2 === 0) {
 
-    wetButton.classList.add('subBtn');
+    wetButton.classList.add('subBtn', 'fartPosition');
     wetButton.id = 'wet';
     wetButton.onclick = wetListner;
     wetButton.textContent = 'Wet';
     parent.appendChild(wetButton);
 
-    perfectButton.classList.add('subBtn');
+    perfectButton.classList.add('subBtn', 'fartPosition');
     perfectButton.id = 'perfect';
     perfectButton.onclick = perfectListner;
     perfectButton.textContent = 'Classic';
     parent.appendChild(perfectButton);
 
-    longButton.classList.add('subBtn');
+    longButton.classList.add('subBtn', 'fartPosition');
     longButton.id = 'long';
     longButton.onclick = longListner;
     longButton.textContent = 'Long';
     parent.appendChild(longButton);
 
-    shortButton.classList.add('subBtn');
+    shortButton.classList.add('subBtn', 'fartPosition');
     shortButton.id = 'short';
     shortButton.onclick = shortListner;
     shortButton.textContent = 'Short';
     parent.appendChild(shortButton);
-    return;
+    
     }
 }
 
@@ -73,6 +73,36 @@ function longListner() {
 function shortListner() {
     const perfectFart = document.getElementById('short');
     perfectFart.addEventListener('click', playSound('shortFart'));
+}
+
+//ENDFARTS STARTSEX
+
+let sexClicks = 0;
+const sexBtn = document.getElementById('sexBtn')
+sexBtn.addEventListener('click', sexCount)
+function sexCount() {
+    return sexClicks++;
+}
+
+sexBtn.onclick = function addSex() {
+
+    const parent = document.getElementById('subBtnLeft');
+    const absurdButton = document.createElement('button');
+
+    if(sexClicks === 0 || sexClicks % 2 === 0) {
+        absurdButton.classList.add('subBtn', 'sexPosition');
+        absurdButton.id = 'absurd';
+        absurdButton.onclick = absurdListner;
+        absurdButton.textContent = 'Woman';
+        parent.appendChild(absurdButton);
+    }else{
+        document.getElementById('absurd').remove()
+    }
+}
+
+function absurdListner() {
+    const absurdSex = document.getElementById('absurd');
+    absurdSex.addEventListener('click', playSound('absurdSex'));
 }
 
 function playSound(id) {
