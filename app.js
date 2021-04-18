@@ -89,6 +89,7 @@ sexBtn.onclick = function addSex() {
 
     const parent = document.getElementById('sexContainer');
     const absurdButton = document.createElement('button');
+    const slapButton = document.createElement('button');
 
     if(sexClicks === 0 || sexClicks % 2 !== 0) {
         absurdButton.classList.add('subBtn', 'sexPosition');
@@ -96,14 +97,26 @@ sexBtn.onclick = function addSex() {
         absurdButton.onclick = absurdListner;
         absurdButton.textContent = 'Woman';
         parent.appendChild(absurdButton);
+
+        slapButton.classList.add('subBtn', 'sexPosition');
+        slapButton.id = 'slap';
+        slapButton.onclick = slapListner;
+        slapButton.textContent = 'Slap';
+        parent.appendChild(slapButton);
+
     }else{
-        document.getElementById('absurd').remove()
+        document.getElementById('absurd').remove();
+        document.getElementById('slap').remove();
     }
 }
 
 function absurdListner() {
     const absurdSex = document.getElementById('absurd');
     absurdSex.addEventListener('click', playSound('absurdSex'));
+}
+function slapListner() {
+    const slapSex = document.getElementById('slap');
+    slapSex.addEventListener('click', playSound('slapSex'));
 }
 
             //ENDSEX STARTBOOM
@@ -136,7 +149,7 @@ boomBtn.onclick = function addBoom() {
         bigButton.classList.add('subBtn', 'boomPosition');
         bigButton.id = 'big';
         bigButton.onclick = bigListner;
-        bigButton.textContent = 'big';
+        bigButton.textContent = 'Big';
         parent.appendChild(bigButton);
 
         cinematicButton.classList.add('subBtn', 'boomPosition');
@@ -208,6 +221,262 @@ function zooCount() {
     return zooClicks++;
 }
 
+zooBtn.onclick = function addZoo() {
+
+    const parent = document.getElementById('zooContainer');
+    const chickenButton = document.createElement('button'),
+          cowButton = document.createElement('button'),
+          donkeyButton = document.createElement('button'),
+          goatButton = document.createElement('button'),
+          hedgehogButton = document.createElement('button'),
+          roosterButton = document.createElement('button');
+
+    if(zooClicks === 0 || zooClicks % 2 === 0) {
+        chickenButton.classList.add('subBtn', 'zooPosition');
+        chickenButton.id = 'chicken';
+        chickenButton.onclick = chickenListner;
+        chickenButton.textContent = 'Chicken';
+        parent.appendChild(chickenButton);
+
+        cowButton.classList.add('subBtn', 'zooPosition');
+        cowButton.id = 'cow';
+        cowButton.onclick = cowListner;
+        cowButton.textContent = 'Cow';
+        parent.appendChild(cowButton);
+
+        donkeyButton.classList.add('subBtn', 'zooPosition');
+        donkeyButton.id = 'donkey';
+        donkeyButton.onclick = donkeyListner;
+        donkeyButton.textContent = 'Donkey';
+        parent.appendChild(donkeyButton);
+
+        goatButton.classList.add('subBtn', 'zooPosition');
+        goatButton.id = 'goat';
+        goatButton.onclick = goatListner;
+        goatButton.textContent = 'Goat';
+        parent.appendChild(goatButton);
+
+        hedgehogButton.classList.add('subBtn', 'zooPosition');
+        hedgehogButton.id = 'hedgehog';
+        hedgehogButton.onclick = hedgehogListner;
+        hedgehogButton.textContent = 'Hedgehog';
+        parent.appendChild(hedgehogButton);
+
+        roosterButton.classList.add('subBtn', 'zooPosition');
+        roosterButton.id = 'rooster';
+        roosterButton.onclick = roosterListner;
+        roosterButton.textContent = 'Rooster';
+        parent.appendChild(roosterButton);
+
+
+    }else{
+        document.getElementById('chicken').remove();
+        document.getElementById('cow').remove();
+        document.getElementById('donkey').remove();
+        document.getElementById('goat').remove();
+        document.getElementById('hedgehog').remove();
+        document.getElementById('rooster').remove();
+    }
+}
+
+function chickenListner() {
+    const chicken = document.getElementById('chicken');
+    chicken.addEventListener('click', playSound('chickenZoo'));
+}
+function cowListner() {
+    const cow = document.getElementById('cow');
+    cow.addEventListener('click', playSound('cowZoo'));
+}
+function donkeyListner() {
+    const donkey = document.getElementById('donkey');
+    donkey.addEventListener('click', playSound('donkeyZoo'));
+}
+function goatListner() {
+    const goat = document.getElementById('goat');
+    goat.addEventListener('click', playSound('goatZoo'));
+}
+function hedgehogListner() {
+    const hedgehog = document.getElementById('hedgehog');
+    hedgehog.addEventListener('click', playSound('hedgehogZoo'));
+}
+function roosterListner() {
+    const rooster = document.getElementById('rooster');
+    rooster.addEventListener('click', playSound('roosterZoo'));
+}
+
+            //ENDZOO STARTTHEME
+
+let themeClicks = 0;
+const themeBtn = document.getElementById('themeBtn');
+themeBtn.addEventListener('click', themeCount);
+function themeCount() {
+    console.log(themeClicks);
+    return themeClicks++;
+}
+
+themeBtn.onclick = function addTheme() {
+
+    const parent = document.getElementById('themeContainer');
+    const cheerButton = document.createElement('button'),
+          wwiiButton = document.createElement('button'),
+          phoneButton = document.createElement('button'),
+          stormButton = document.createElement('button'),
+          typingButton = document.createElement('button'),
+          infernoButton = document.createElement('button');
+
+    if(themeClicks === 0 || themeClicks % 2 === 0) {
+        cheerButton.classList.add('subBtn', 'themePosition');
+        cheerButton.id = 'cheer';
+        cheerButton.onclick = cheerListner;
+        cheerButton.textContent = 'Cheers';
+        parent.appendChild(cheerButton);
+
+        wwiiButton.classList.add('subBtn', 'themePosition');
+        wwiiButton.id = 'wwii';
+        wwiiButton.onclick = wwiiListner;
+        wwiiButton.textContent = 'Siren';
+        parent.appendChild(wwiiButton);
+
+        phoneButton.classList.add('subBtn', 'themePosition');
+        phoneButton.id = 'phone';
+        phoneButton.onclick = phoneListner;
+        phoneButton.textContent = 'Phone';
+        parent.appendChild(phoneButton);
+
+        stormButton.classList.add('subBtn', 'themePosition');
+        stormButton.id = 'storm';
+        stormButton.onclick = stormListner;
+        stormButton.textContent = 'Storm';
+        parent.appendChild(stormButton);
+
+        typingButton.classList.add('subBtn', 'themePosition');
+        typingButton.id = 'typing';
+        typingButton.onclick = typingListner;
+        typingButton.textContent = 'Typing';
+        parent.appendChild(typingButton);
+
+        infernoButton.classList.add('subBtn', 'themePosition');
+        infernoButton.id = 'inferno';
+        infernoButton.onclick = infernoListner;
+        infernoButton.textContent = 'Inferno';
+        parent.appendChild(infernoButton);
+
+
+    }else{
+        document.getElementById('cheer').remove();
+        document.getElementById('wwii').remove();
+        document.getElementById('phone').remove();
+        document.getElementById('storm').remove();
+        document.getElementById('typing').remove();
+        document.getElementById('inferno').remove();
+    }
+}
+
+function cheerListner() {
+    const cheer = document.getElementById('cheer');
+    cheer.addEventListener('click', playSound('cheerTheme'));
+}
+function wwiiListner() {
+    const wwii = document.getElementById('wwii');
+    wwii.addEventListener('click', playSound('wwiiTheme'));
+}
+function phoneListner() {
+    const phone = document.getElementById('phone');
+    phone.addEventListener('click', playSound('phoneTheme'));
+}
+function stormListner() {
+    const storm = document.getElementById('storm');
+    storm.addEventListener('click', playSound('stormTheme'));
+}
+function typingListner() {
+    const typing = document.getElementById('typing');
+    typing.addEventListener('click', playSound('typingTheme'));
+}
+function infernoListner() {
+    const inferno = document.getElementById('inferno');
+    inferno.addEventListener('click', playSound('infernoTheme'));
+}
+
+            //ENDTHEME STARTSCREAM
+
+let screamClicks = 0;
+const screamBtn = document.getElementById('screamBtn');
+screamBtn.addEventListener('click', screamCount);
+function screamCount() {
+    console.log(screamClicks);
+    return screamClicks++;
+}
+
+screamBtn.onclick = function addScream() {
+
+    const parent = document.getElementById('screamContainer');
+    const exageratedButton = document.createElement('button'),
+          retardedButton = document.createElement('button'),
+          shortscrButton = document.createElement('button'),
+          tragicButton = document.createElement('button'),
+          womanButton = document.createElement('button');
+
+    if(screamClicks === 0 || screamClicks % 2 === 0) {
+        exageratedButton.classList.add('subBtn', 'screamPosition');
+        exageratedButton.id = 'exagerated';
+        exageratedButton.onclick = exageratedListner;
+        exageratedButton.textContent = 'Exagerated';
+        parent.appendChild(exageratedButton);
+
+        retardedButton.classList.add('subBtn', 'screamPosition');
+        retardedButton.id = 'retarded';
+        retardedButton.onclick = retardedListner;
+        retardedButton.textContent = 'Retarded';
+        parent.appendChild(retardedButton);
+
+        shortscrButton.classList.add('subBtn', 'screamPosition');
+        shortscrButton.id = 'shortscr';
+        shortscrButton.onclick = shortscrListner;
+        shortscrButton.textContent = 'Short';
+        parent.appendChild(shortscrButton);
+
+        tragicButton.classList.add('subBtn', 'screamPosition');
+        tragicButton.id = 'tragic';
+        tragicButton.onclick = tragicListner;
+        tragicButton.textContent = 'Tragic';
+        parent.appendChild(tragicButton);
+
+        womanButton.classList.add('subBtn', 'screamPosition');
+        womanButton.id = 'woman';
+        womanButton.onclick = womanListner;
+        womanButton.textContent = 'Woman';
+        parent.appendChild(womanButton);
+
+
+    }else{
+        document.getElementById('exagerated').remove();
+        document.getElementById('retarded').remove();
+        document.getElementById('shortscr').remove();
+        document.getElementById('tragic').remove();
+        document.getElementById('woman').remove();
+    }
+}
+
+function exageratedListner() {
+    const exagerated = document.getElementById('exagerated');
+    exagerated.addEventListener('click', playSound('exageratedScream'));
+}
+function retardedListner() {
+    const retarded = document.getElementById('retarded');
+    retarded.addEventListener('click', playSound('retardedScream'));
+}
+function shortscrListner() {
+    const shortscr = document.getElementById('shortscr');
+    shortscr.addEventListener('click', playSound('shortScream'));
+}
+function tragicListner() {
+    const tragic = document.getElementById('tragic');
+    tragic.addEventListener('click', playSound('tragicScream'));
+}
+function womanListner() {
+    const woman = document.getElementById('woman');
+    woman.addEventListener('click', playSound('womanScream'));
+}
 
 function playSound(id) {
     const sound = document.getElementById(id);

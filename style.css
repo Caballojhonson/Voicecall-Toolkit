@@ -29,7 +29,7 @@ button {
     margin-left: 15%;
     margin-right: 15%;
 }  
-#subBtnLeft, #subBtnRight {
+#subBtnsLeft, #subBtnsRight {
     display: grid;
     grid-template-columns: auto;
     grid-template-rows: 33% 33% 33%;
@@ -93,5 +93,14 @@ button {
     grid-row: 2 / 3;
 }
 .boomPosition {
+    grid-row: 3 / 4;
+}
+.zooPosition {
+    grid-row: 1 / 2;
+}
+.themePosition {
+    grid-row: 2 / 3;
+}
+.screamPosition {
     grid-row: 3 / 4;
 }
