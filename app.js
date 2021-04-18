@@ -8,7 +8,7 @@ function fartCounter() {
 
 function addFarts() {
     
-    const parent = document.getElementById('subBtnLeft');
+    const parent = document.getElementById('fartContainer');
     const wetButton = document.createElement('button');
     const perfectButton = document.createElement('button');
     const longButton = document.createElement('button');
@@ -75,21 +75,22 @@ function shortListner() {
     perfectFart.addEventListener('click', playSound('shortFart'));
 }
 
-//ENDFARTS STARTSEX
+            //ENDFARTS STARTSEX
 
 let sexClicks = 0;
 const sexBtn = document.getElementById('sexBtn')
 sexBtn.addEventListener('click', sexCount)
 function sexCount() {
+    console.log(sexClicks)
     return sexClicks++;
 }
 
 sexBtn.onclick = function addSex() {
 
-    const parent = document.getElementById('subBtnLeft');
+    const parent = document.getElementById('sexContainer');
     const absurdButton = document.createElement('button');
 
-    if(sexClicks === 0 || sexClicks % 2 === 0) {
+    if(sexClicks === 0 || sexClicks % 2 !== 0) {
         absurdButton.classList.add('subBtn', 'sexPosition');
         absurdButton.id = 'absurd';
         absurdButton.onclick = absurdListner;
