@@ -106,6 +106,109 @@ function absurdListner() {
     absurdSex.addEventListener('click', playSound('absurdSex'));
 }
 
+            //ENDSEX STARTBOOM
+
+let boomClicks = 0;
+const boomBtn = document.getElementById('boomBtn');
+boomBtn.addEventListener('click', boomCount);
+function boomCount() {
+    console.log(boomClicks);
+    return boomClicks++;
+}
+
+boomBtn.onclick = function addBoom() {
+
+    const parent = document.getElementById('boomContainer');
+    const artilleryButton = document.createElement('button'),
+          bigButton = document.createElement('button'),
+          cinematicButton = document.createElement('button'),
+          deepButton = document.createElement('button'),
+          distantButton = document.createElement('button'),
+          gunButton = document.createElement('button');
+
+    if(boomClicks === 0 || boomClicks % 2 === 0) {
+        artilleryButton.classList.add('subBtn', 'boomPosition');
+        artilleryButton.id = 'artillery';
+        artilleryButton.onclick = artilleryListner;
+        artilleryButton.textContent = 'Artillery';
+        parent.appendChild(artilleryButton);
+
+        bigButton.classList.add('subBtn', 'boomPosition');
+        bigButton.id = 'big';
+        bigButton.onclick = bigListner;
+        bigButton.textContent = 'big';
+        parent.appendChild(bigButton);
+
+        cinematicButton.classList.add('subBtn', 'boomPosition');
+        cinematicButton.id = 'cinematic';
+        cinematicButton.onclick = cinematicListner;
+        cinematicButton.textContent = 'Cinematic';
+        parent.appendChild(cinematicButton);
+
+        deepButton.classList.add('subBtn', 'boomPosition');
+        deepButton.id = 'deep';
+        deepButton.onclick = deepListner;
+        deepButton.textContent = 'Deep';
+        parent.appendChild(deepButton);
+
+        distantButton.classList.add('subBtn', 'boomPosition');
+        distantButton.id = 'distant';
+        distantButton.onclick = distantListner;
+        distantButton.textContent = 'Distant';
+        parent.appendChild(distantButton);
+
+        gunButton.classList.add('subBtn', 'boomPosition');
+        gunButton.id = 'gun';
+        gunButton.onclick = gunListner;
+        gunButton.textContent = 'Gunshot';
+        parent.appendChild(gunButton);
+
+
+    }else{
+        document.getElementById('artillery').remove();
+        document.getElementById('big').remove();
+        document.getElementById('cinematic').remove();
+        document.getElementById('deep').remove();
+        document.getElementById('distant').remove();
+        document.getElementById('gun').remove();
+    }
+}
+
+function artilleryListner() {
+    const artillery = document.getElementById('artillery');
+    artillery.addEventListener('click', playSound('artilleryBoom'));
+}
+function bigListner() {
+    const big = document.getElementById('big');
+    big.addEventListener('click', playSound('bigBoom'));
+}
+function cinematicListner() {
+    const cinematic = document.getElementById('cinematic');
+    cinematic.addEventListener('click', playSound('cinematicBoom'));
+}
+function deepListner() {
+    const deep = document.getElementById('deep');
+    deep.addEventListener('click', playSound('deepBoom'));
+}
+function distantListner() {
+    const distant = document.getElementById('distant');
+    distant.addEventListener('click', playSound('distantBoom'));
+}
+function gunListner() {
+    const gun = document.getElementById('gun');
+    gun.addEventListener('click', playSound('gunshot'));
+}
+            //ENDBOOM STARTZOO
+
+let zooClicks = 0;
+const zooBtn = document.getElementById('zooBtn');
+zooBtn.addEventListener('click', zooCount);
+function zooCount() {
+    console.log(zooClicks);
+    return zooClicks++;
+}
+
+
 function playSound(id) {
     const sound = document.getElementById(id);
     sound.play();
