@@ -116,6 +116,10 @@ sexBtn.onclick = function addSex() {
     const parent = document.getElementById('sexContainer');
     const absurdButton = document.createElement('button');
     const slapButton = document.createElement('button');
+    const screamButton = document.createElement('button');
+    const smackButton = document.createElement('button');
+    const squeakyButton = document.createElement('button');
+    const standardButton = document.createElement('button');
 
     if(sexClicks === 0 || sexClicks % 2 !== 0) {
         absurdButton.classList.add('subBtn', 'sexPosition');
@@ -130,9 +134,38 @@ sexBtn.onclick = function addSex() {
         slapButton.textContent = 'Slap';
         parent.appendChild(slapButton);
 
+        screamButton.classList.add('subBtn', 'sexPosition');
+        screamButton.id = 'scream';
+        screamButton.onclick = screamListner;
+        screamButton.textContent = 'Scream';
+        parent.appendChild(screamButton);
+
+        smackButton.classList.add('subBtn', 'sexPosition');
+        smackButton.id = 'smack';
+        smackButton.onclick = smackListner;
+        smackButton.textContent = 'Smack';
+        parent.appendChild(smackButton);
+
+        squeakyButton.classList.add('subBtn', 'sexPosition');
+        squeakyButton.id = 'squeaky';
+        squeakyButton.onclick = squeakyListner;
+        squeakyButton.textContent = 'Squeaky';
+        parent.appendChild(squeakyButton);
+
+        standardButton.classList.add('subBtn', 'sexPosition');
+        standardButton.id = 'standard';
+        standardButton.onclick = standardListner;
+        standardButton.textContent = 'Ok';
+        parent.appendChild(standardButton);
+
+
     }else{
         document.getElementById('absurd').remove();
         document.getElementById('slap').remove();
+        document.getElementById('scream').remove();
+        document.getElementById('smack').remove();
+        document.getElementById('squeaky').remove();
+        document.getElementById('standard').remove();
     }
 }
 
@@ -143,6 +176,22 @@ function absurdListner() {
 function slapListner() {
     const slapSex = document.getElementById('slap');
     slapSex.addEventListener('click', playSound('slapSex'));
+}
+function screamListner() {
+    const screamSex = document.getElementById('scream');
+    screamSex.addEventListener('click', playSound('screamSex'));
+}
+function smackListner() {
+    const smackSex = document.getElementById('smack');
+    smackSex.addEventListener('click', playSound('smackSex'));
+}
+function squeakyListner() {
+    const squeakySex = document.getElementById('squeaky');
+    squeakySex.addEventListener('click', playSound('squeakySex'));
+}
+function standardListner() {
+    const standardSex = document.getElementById('standard');
+    standardSex.addEventListener('click', playSound('standardSex'));
 }
 
             //ENDSEX STARTBOOM
@@ -521,6 +570,7 @@ function abnormalListner() {
 function playSound(id) {
     const sound = document.getElementById(id);
     sound.play();
+    sound.currentTime = 0;
 }
 
 document.addEventListener('keydown', soundHandler)
