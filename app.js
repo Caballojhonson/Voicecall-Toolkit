@@ -13,6 +13,8 @@ function addFarts() {
     const perfectButton = document.createElement('button');
     const longButton = document.createElement('button');
     const shortButton = document.createElement('button');
+    const lowfreqButton = document.createElement('button');
+    const obnoxiousButton = document.createElement('button');
     
     if(fartClicks === 0 || fartClicks % 2 === 0) {
 
@@ -39,6 +41,18 @@ function addFarts() {
     shortButton.onclick = shortListner;
     shortButton.textContent = 'Short';
     parent.appendChild(shortButton);
+
+    lowfreqButton.classList.add('subBtn', 'fartPosition');
+    lowfreqButton.id = 'lowfreq';
+    lowfreqButton.onclick = lowfreqListner;
+    lowfreqButton.textContent = 'Deep';
+    parent.appendChild(lowfreqButton);
+
+    obnoxiousButton.classList.add('subBtn', 'fartPosition');
+    obnoxiousButton.id = 'obnoxious';
+    obnoxiousButton.onclick = obnoxiousListner;
+    obnoxiousButton.textContent = 'Obnoxious';
+    parent.appendChild(obnoxiousButton);
     
     }
 }
@@ -49,12 +63,16 @@ function removeFarts() {
     const perfect = document.getElementById('perfect');
     const long = document.getElementById('long');
     const short = document.getElementById('short');
+    const lowfreq = document.getElementById('lowfreq');
+    const obnoxious = document.getElementById('obnoxious');
 
     if(fartClicks % 2 !== 0) {
         wet.remove();
         perfect.remove();
         long.remove();
         short.remove();
+        lowfreq.remove();
+        obnoxious.remove();
     }
 }
 
@@ -73,6 +91,14 @@ function longListner() {
 function shortListner() {
     const perfectFart = document.getElementById('short');
     perfectFart.addEventListener('click', playSound('shortFart'));
+}
+function lowfreqListner() {
+    const perfectFart = document.getElementById('lowfreq');
+    perfectFart.addEventListener('click', playSound('lowfreqFart'));
+}
+function obnoxiousListner() {
+    const perfectFart = document.getElementById('obnoxious');
+    perfectFart.addEventListener('click', playSound('obnoxiousFart'));
 }
 
             //ENDFARTS STARTSEX
@@ -415,12 +441,13 @@ screamBtn.onclick = function addScream() {
           shortscrButton = document.createElement('button'),
           tragicButton = document.createElement('button'),
           womanButton = document.createElement('button');
+          abnormalButton = document.createElement('button');
 
     if(screamClicks === 0 || screamClicks % 2 === 0) {
         exageratedButton.classList.add('subBtn', 'screamPosition');
         exageratedButton.id = 'exagerated';
         exageratedButton.onclick = exageratedListner;
-        exageratedButton.textContent = 'Exagerated';
+        exageratedButton.textContent = 'Exaggerated';
         parent.appendChild(exageratedButton);
 
         retardedButton.classList.add('subBtn', 'screamPosition');
@@ -447,6 +474,12 @@ screamBtn.onclick = function addScream() {
         womanButton.textContent = 'Woman';
         parent.appendChild(womanButton);
 
+        abnormalButton.classList.add('subBtn', 'screamPosition');
+        abnormalButton.id = 'abnormal';
+        abnormalButton.onclick = abnormalListner;
+        abnormalButton.textContent = 'Abnormal';
+        parent.appendChild(abnormalButton);
+
 
     }else{
         document.getElementById('exagerated').remove();
@@ -454,6 +487,7 @@ screamBtn.onclick = function addScream() {
         document.getElementById('shortscr').remove();
         document.getElementById('tragic').remove();
         document.getElementById('woman').remove();
+        document.getElementById('abnormal').remove();
     }
 }
 
@@ -477,8 +511,35 @@ function womanListner() {
     const woman = document.getElementById('woman');
     woman.addEventListener('click', playSound('womanScream'));
 }
+function abnormalListner() {
+    const abnormal = document.getElementById('abnormal');
+    abnormal.addEventListener('click', playSound('abnormalScream'));
+}
+
+            //ENDSCREAM STARTMISC
 
 function playSound(id) {
     const sound = document.getElementById(id);
     sound.play();
+}
+
+document.addEventListener('keydown', soundHandler)
+
+function soundHandler() {
+
+    let allSounds = document.querySelectorAll('audio');
+
+    if(event.keyCode === 32) {
+        event.preventDefault();
+        for (let i = 0; i < allSounds.length; i++) {
+        allSounds[i].pause();
+        allSounds.currentTime = 0;
+        }
+    }else if (event.keyCode === 13) {
+        event.preventDefault();
+        for(let i = 0; i < allSounds.length; i++) {
+            allSounds[i].play();
+            allSounds.currentTime = 0;
+        }
+    }
 }
