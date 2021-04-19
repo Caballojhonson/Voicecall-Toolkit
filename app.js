@@ -39,7 +39,7 @@ function addFarts() {
     shortButton.classList.add('subBtn', 'fartPosition');
     shortButton.id = 'short';
     shortButton.onclick = shortListner;
-    shortButton.textContent = 'Short';
+    shortButton.textContent = 'Push';
     parent.appendChild(shortButton);
 
     lowfreqButton.classList.add('subBtn', 'fartPosition');
