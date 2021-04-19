@@ -13,21 +13,18 @@ button {
     cursor: pointer;
 }
 @keyframes subBtnAnim {
-    0% {height: 4em; width: 4em; margin-left: -25%;}
+    0% {height: 4em; width: 4em; margin-left: -20%;}
     50% {height: 6em; width: 6em;}
     100% {height: 5em; width: 5em}
 } 
 
 #btnContainer {
     display: grid;
-    grid-template-columns: 35% 30% 35%;
+    grid-template-columns: 40% 20% 40%;
 }
 #btnMainbar {
     display: grid;
     grid-template-columns: auto auto;
-    column-gap: 25px;
-    margin-left: 15%;
-    margin-right: 15%;
 }  
 #subBtnsLeft, #subBtnsRight {
     display: grid;
@@ -36,6 +33,9 @@ button {
     align-items: center;
     justify-items: end;
     margin-top: 89px;
+}
+#subBtnsRight {
+    justify-items: left;
 }
 #sideTitle {
     padding: 20px;
